@@ -8,7 +8,7 @@ document.getElementById('login-btn').addEventListener('click', function(event){
     if(phonNumber === '015' && pinNumber === '1234'){
         console.log('Your Login sucsses');
 
-        window.location.href = '/index1.html';
+        window.location.href = '/home.html';
     }
     else{
         alert('Wormg Phon Number and Pin Number, Submit With Correct Number & Pin !');
