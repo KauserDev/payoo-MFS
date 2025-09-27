@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page Payoo</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body>
+    <main>
+        <div class="flex justify-center">
+            <div class="mockup-phone">
+                <div class="mockup-phone-camera"></div>
+                <div class="mockup-phone-display text-black grid place-content-center bg-white">
+                
+                    <div>
+                        <div class="flex flex-row justify-center items-center gap-20">
+                            <div class="stats shadow">
+                                <div class="stat">
+                                    <div id="corrent-balence" class="stat-value">9400</div>
+                                    <div class="stat-desc">Corrent Balence</div>
+                                </div>
+                            </div>
+                            <div>
+                                <button id="log-out-btn" class="btn text-white bg-orange-300">Log Out</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="flex justify-between">
+                        <button id="add-money-1" class="btn bg-green-600 text-white btn-lg">Add Money</button>
+                        <button id="cash-out-1" class="btn bg-green-600 text-white btn-lg">Cash Out</button>
+                    </div>
+                    <div class="mt-2 flex justify-between">
+                        <button id="Transactions-btn" class="btn bg-green-600 text-white text-base font-bold btn-lg">Transactions</button>
+                        <button id="bonus-btn" class="btn bg-green-600 text-white text-base btn-lg">Get Bonus</button>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <!-- add money style -->
+
+                    <div>
+                        <div id="add-hidden" class="hidden card bg-base-100 max-w-sm shrink-0 shadow-2xl">
+                            <div class="card-body">
+                                <fieldset class="fieldset">
+                                    <label class="label text-sm font-bold">Amount</label>
+                                    <input id="enter-amount-add" type="text" class="input" placeholder="Enter Amount" />
+                                    <label class="label text-sm font-bold">Pin Number</label>
+                                    <input id="enter-pin-add" type="password" class="input text-gray-500" placeholder="Enter Your Pin" />
+                                    <button id="add-money-btn" class="btn bg-green-600 text-white mt-4">Add Money</button>
+                                </fieldset>
+                            </div>
+                        </div>
+
+                        <!-- cash out form -->
+
+                        <div id="cash-out-hidden" class="hidden card bg-base-100 max-w-sm shrink-0 shadow-2xl">
+                            <div class="card-body">
+                                <fieldset class="fieldset">
+                                    <label class="label text-sm font-bold">Amount</label>
+                                    <input id="enter-amount-cash" type="text" class="input" placeholder="Cash Out Amount" />
+                                    <label class="label text-sm font-bold">Pin Number</label>
+                                    <input id="enter-pin-cash" type="password" class="input text-gray-500" placeholder="Enter Your Pin" />
+                                    <button id="cash-out-btn" class="btn bg-red-600 text-white mt-4">Cash Out</button>
+                                </fieldset>
+                            </div>
+                        </div>
+
+                        <!-- Transactions method style -->
+
+                        <div id="Transactions" class="hidden">
+                            <h1 class="font-bold underline text-base">Transactions details :</h1>
+
+                            <div id="Transactions-container" class="mt-2 space-y-1">
+
+                            </div>
+                        </div>
+
+                        <!-- get bonus style -->
+
+                        <div id="Get-Bonus" class="hidden card bg-base-100 max-w-sm shrink-0 shadow-2xl">
+                            <div class="card-body">
+                                <fieldset class="fieldset">
+                                    <label class="label text-sm font-bold">Bonus Coupon</label>
+                                    <input id="Enter-your-coupon" type="text" class="input" placeholder="Enter your coupon" />
+                                    <button id="Get-Bonus-btn" class="btn bg-orange-400 text-white mt-4">Get Bonus</button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    
+    <script src="js/utilits.js"></script>
+    <script src="js/add.js"></script>
+    <script src="js/alternet.js"></script>
+    <script src="js/logout.js"></script>
+    
+    
+</body>
+</html>
