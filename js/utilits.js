@@ -24,3 +24,12 @@ function showSelectById(id){
 
     document.getElementById(id).classList.remove('hidden');
 }
+
+
+function showModalById(id) {
+    const modal = document.getElementById(id);
+    
+    if (modal && typeof modal.showModal === 'function') {
+        modal.showModal();
+    }
+}

@@ -7,6 +7,9 @@ document.getElementById('add-money-btn').addEventListener('click', function(even
     const pinNumber = getInputFieldById('enter-pin-add');
 
 
+    showModalById('add_money_modal');
+
+
     if(isNaN(addMoney)){
         alert('Failed to add money !')
 
@@ -32,6 +35,9 @@ document.getElementById('add-money-btn').addEventListener('click', function(even
     else{
         alert('Worng Pin Number, submit the correct Pin Number !');
     }
+
+    document.getElementById('enter-amount-add').value = '';
+    document.getElementById('enter-pin-add').value = '';
 })
 
 //cash out style
@@ -41,39 +47,46 @@ document.getElementById('cash-out-btn').addEventListener('click', function(event
     event.preventDefault();
 
     const cashMoney = getInputFieldById('enter-amount-cash');
-    const pinCash = getInputFieldById('enter-pin-cash');
+    const pinCash = document.getElementById('enter-pin-cash').value; 
+    const currentBalance = getTextFieldById('corrent-balence');
 
-
-    if(isNaN(cashMoney)){
-        alert('Failed to cash out money !');
+    if(pinCash !== '1234'){
+        alert('Worng Pin Number, submit the correct Pin Number !');
         return;
     }
-
-    if(pinCash === 1234){
+    
+    if(cashMoney > currentBalance){
+        alert('Failed to cash out money! Insufficient Balance.');
         
-
-        const Balence = getTextFieldById('corrent-balence');
-        const newBalence = Balence - cashMoney;
-
-        document.getElementById('corrent-balence').innerText = newBalence;
-
-
-        // trasition items
-        const div = document.createElement('div');
-        div.classList.add('bg-red-200');
-        div.innerHTML = `
-            <p>Cash out: ${cashMoney} Tk. New Balence: ${newBalence} Tk.</p>
-
-
-        `
-
-        document.getElementById('Transactions-container').appendChild(div);
-
+        document.getElementById('enter-amount-cash').value = '';
+        
+        return;
     }
-    else{
-        alert('Worng Pin Number, submit the correct Pin Number !');
+    
+    
+    
+    const newBalence = currentBalance - cashMoney; 
+    
+    
+    document.getElementById('corrent-balence').innerText = newBalence;
+
+
+    showModalById('cash_money_modal');
+
+    const transactionsContainer = document.getElementById('Transactions-container');
+    const div = document.createElement('div');
+    div.classList.add('bg-red-200');
+    div.innerHTML = `
+        <p>Cash out: ${cashMoney} Tk. New Balence: ${newBalence} Tk.</p>
+    `;
+
+    if(transactionsContainer){
+        transactionsContainer.appendChild(div);
     }
-})
+
+    document.getElementById('enter-amount-cash').value = '';
+    document.getElementById('enter-pin-cash').value = '';
+});
 
 
 //get bonus style
