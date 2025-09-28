@@ -105,6 +105,8 @@ document.getElementById('Get-Bonus-btn').addEventListener('click', function(even
 
             document.getElementById('corrent-balence').innerText = newBalence;
 
+            showModalById('coupon_money_modal');
+
 
             const p = document.createElement('p');
             p.classList.add('bg-orange-200')
